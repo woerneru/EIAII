@@ -8,8 +8,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 namespace Aufgabe0{
 
     function taskzero() {
-        var name = prompt("Whats your name?");
-        var node: HTMLElement = document.getElementById("kladderadatsch");
+        let name = prompt("Whats your name?");
+        let node: HTMLElement = document.getElementById("kladderadatsch");
         node.innerHTML += "Hello ";
         node.innerHTML += name;
         node.innerHTML += ", How´s it going?";
