@@ -7,13 +7,13 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 */
 namespace Aufgabe0{
 
-    function taskzero() {
-        let name = prompt("Whats your name?");
-        let node: HTMLElement = document.getElementById("kladderadatsch");
-        node.innerHTML += "Hello ";
-        node.innerHTML += name;
-        node.innerHTML += ", How´s it going?";
-        console.log("Hello"+ name, +" How are you today?");
+function taskzero() {
+    let name = prompt("Whats your name?");
+    let node: HTMLElement = document.getElementById("kladderadatsch");
+    node.innerHTML += "Hello ";
+    node.innerHTML += name;
+    node.innerHTML += ", How´s it going?";
+    console.log("Hello" + name +" How are you today?");
     }
     document.addEventListener("DOMContentLoaded", taskzero);
 }
