@@ -8,12 +8,12 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
 var Aufgabe0;
 (function (Aufgabe0) {
     function taskzero() {
-        var name = prompt("Whats your name?");
-        var node = document.getElementById("kladderadatsch");
+        let name = prompt("Whats your name?");
+        let node = document.getElementById("kladderadatsch");
         node.innerHTML += "Hello ";
         node.innerHTML += name;
         node.innerHTML += ", How´s it going?";
-        console.log("Hello" + name, +" How are you today?");
+        console.log("Hello" + name + " How are you today?");
     }
     document.addEventListener("DOMContentLoaded", taskzero);
 })(Aufgabe0 || (Aufgabe0 = {}));
