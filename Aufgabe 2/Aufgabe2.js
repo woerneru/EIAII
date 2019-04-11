@@ -242,7 +242,7 @@ var Aufgabe2;
         let s2 = 4;
         z = Number(input);
         for (let d = 0; d < z; d++) {
-            let l = random1(10);
+            let l = random1(32);
             if (l == 13 && s1 <= 0) {
                 d--;
                 continue;

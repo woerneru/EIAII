@@ -1,6 +1,6 @@
 namespace Aufgabe2 {
 
-    function maumau() { 
+    function maumau() :void { 
 
         interface Karten { 
             name: string;
@@ -274,7 +274,7 @@ namespace Aufgabe2 {
         let c: string = ""; 
 
 
-        function random1(x: number) { 
+        function random1(x: number):number { 
             return Math.floor(Math.random() * Math.floor(x));
         }
 
@@ -295,7 +295,7 @@ namespace Aufgabe2 {
 
 
         for (let d: number = 0; d < z; d++) { 
-            let l = random1(10); 
+            let l = random1(32); 
 
             if (l == 13 && s1 <= 0) {
                 d--; 
@@ -351,14 +351,14 @@ namespace Aufgabe2 {
 
             }
         }
-        function Stapel() {
+        function Stapel():void {
             let div = document.createElement("div");
             document.body.appendChild(div);
             div.setAttribute("id", "Kartenstapel");
             document.getElementById("Kartenstapel").innerHTML += "Kartenstapel";
         }
 
-        function AblageStapel() {
+        function AblageStapel():void {
             let div = document.createElement("div");
             document.body.appendChild(div);
             div.setAttribute("id", "Ablage");
