@@ -66,7 +66,6 @@ var task3;
         div.setAttribute("class", "pile");
         document.getElementById("pile" + _y).innerHTML += _typ;
         let s = div.style;
-        s.backgroundColor = _color;
     }
     //Sortieren
     function sortCards() {
@@ -94,15 +93,15 @@ var task3;
             placeDiv(handCards[i].farbe, handCards[i].wert, i);
         }
     }
+    function deleteCards() {
+        let node = document.getElementById("content");
+        node.innerHTML = "";
+    }
     function addCardSpace(_event) {
         var keyCode = _event.keyCode;
         if (keyCode == 32) {
             addCard();
         }
-    }
-    function deleteCards() {
-        let node = document.getElementById("content");
-        node.innerHTML = "";
     }
     //PlaceDiv
     function placeDiv(_color, _typ, _y) {

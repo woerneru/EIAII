@@ -80,7 +80,6 @@ namespace task3 {
         div.setAttribute("class", "pile");
         document.getElementById("pile" + _y).innerHTML += _typ;
         let s: CSSStyleDeclaration = div.style;
-        s.backgroundColor = _color;
         
     }
 
@@ -112,6 +111,10 @@ namespace task3 {
         }
     }
 
+    function deleteCards(): void {
+        let node: HTMLElement = document.getElementById("content");
+        node.innerHTML = "";
+    }
     function addCardSpace(_event: KeyboardEvent): void {
         var keyCode: number = _event.keyCode;
         if (keyCode == 32) {
@@ -119,10 +122,7 @@ namespace task3 {
         }
     }
 
-    function deleteCards(): void {
-        let node: HTMLElement = document.getElementById("content");
-        node.innerHTML = "";
-    }
+   
 
     //PlaceDiv
     function placeDiv(_color: string, _typ: string, _y: number): void {
