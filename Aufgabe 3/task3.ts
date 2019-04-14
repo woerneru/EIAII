@@ -44,6 +44,7 @@ namespace task3 {
     function createRandomNumber(x: number): number {
         return Math.floor(Math.random() * Math.floor(x));
     }
+    
 
     function removeCard(_event: MouseEvent): void {
         let main: HTMLElement = document.getElementById("content");
