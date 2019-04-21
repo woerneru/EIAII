@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+Aufgabe: Aufgabe 4: Eisdealer
+Name: Julian Wörner
+Matrikel: 260943
+Datum: 18.04.2019
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+Er wurde nicht kopiert und auch nicht diktiert.
+ -->
+
+ <!--Leider reichte mir aufgrund der familiären verpflichtungen über die osterfeiertage die zeit nicht den code voll funktionstüchtig fertig zu bekommen, dies wird selbstverständlich nachgereicht!-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="aufgabe4.js"></script>
+    <link rel="stylesheet" type="text/css" href="aufgabe4.css">
+    <title>Eisdealer</title>
+</head>
+
+<body>
+    <header>
+        <img src="eismitscheiß.png" alt="Logo">
+    </header>
+    <fieldset id="gefaess">
+        <legend> Gefäß </legend>
+        <input type="radio" name="Radiogroup" value="Becher" id="Becher" />
+        <label for="radio1">Becher</label>
+        <input type="radio" name="Radiogroup" value="Waffel" id="Waffel" />
+        <label for="radio2">Waffel</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Eissorten</legend>
+
+        <p>1,20 Euro pro Kugel</p>
+
+        <p><input type="number" name="amountSorte1" step="1" min="0" max="4" value="0" /> Kugeln
+            <select name="eis1" id="eis1">
+                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
+                <option value="Schokolade">Schokolade</option>
+                <option value="Vanille">Vanille</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Himbeere">Himbeere</option>
+                <option value="Zitrone">Zitrone</option>
+                <option value="Cookie">Cookie</option>
+                <option value="Pipikaka">Pipikaka</option>
+
+            </select>
+        </p>
+
+        <p><input type="number" name="amountSorte2" step="1" min="0" max="4" value="0" /> Kugeln
+            <select name="eis2" id="eis2">
+                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
+                <option value="Schokolade">Schokolade</option>
+                <option value="Vanille">Vanille</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Himbeere">Himbeere</option>
+                <option value="Zitrone">Zitrone</option>
+                <option value="Cookie">Cookie</option>
+                <option value="Pipikaka">Pipikaka</option>
+
+            </select>
+        </p>
+
+        <p><input type="number" name="amountSorte3" step="1" min="0" max="4" value="0" /> Kugeln
+            <select name="eis3" id="eis3">
+                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
+                <option value="Schokolade">Schokolade</option>
+                <option value="Vanille">Vanille</option>
+                <option value="Erdbeere">Erdbeere</option>
+                <option value="Himbeere">Himbeere</option>
+                <option value="Zitrone">Zitrone</option>
+                <option value="Cookie">Cookie</option>
+                <option value="Pipikaka">Pipikaka</option>
+                </datalist>
+            </select>
+        </p>
+
+    </fieldset>
+    <fieldset id="toppings">
+        <legend> Toppings </legend>
+        <input type="checkbox" name="streusel" value="check1" id="Streusel" />
+        <label for="check1">Streusel (+50ct)</label>
+        <input type="checkbox" name="schokosoße" value="check2" id="Schokosoße" />
+        <label for="check2">Schokosoße (+50ct)</label>
+        <input type="checkbox" name="karamellsoße" value="check3" id="Karamellsoße" />
+        <label for="check3">Karamellsoße (+50ct)</label>
+        <input type="checkbox" name="sahne" value="check4" id="Sahne" />
+        <label for="check1">Sahne (+50ct)</label>
+        <input type="checkbox" name="smarties" value="check5" id="Smarties" />
+        <label for="check2">Smarties (+50ct)</label>
+        <input type="checkbox" name="cookies" value="check6" id="Cookies" />
+        <label for="check3">Cookies (+50ct)</label>
+    </fieldset>
+    <fieldset id="text">
+        <legend> Lieferformular </legend>
+        Name
+        <input type="text" name="Text" placeholder="type here" id="Namen" required />
+        <hr />
+        Addresse
+        <input type="text" name="Text" placeholder="type here" id="addresse" required />
+        <hr />
+        Ort
+        <input type="text" name="Text" placeholder="type here" id="ort" required />
+        <hr />
+        E-Mail
+        <input type="email" name="Mail" placeholder="place @ between" />
+
+
+        <fieldset>
+
+            <legend>Lieferung</legend>
+
+            <input type="radio" name="RadiogroupLog" value="Standardlieferung" id="Standardlieferung" />
+            <label for="Standardlieferung">DHL Standardlieferung (+2.5€)</label>
+            <input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express" />
+            <label for="Express">Express (+4€)</label>
+            <input type="radio" name="RadiogroupLog" value="Taxi-Express (+ 9,81 Euro)" id="Taxi-Express" />
+            <label for="Drohnen-Express">Drohnen-Express (+10€)</label>
+
+        </fieldset>
+        Zahlungsmittel
+        <input type="text" name="Zahlungsmittel" list="Payment" placeholder="Zahlungsart" />
+        <datalist id="Payment">
+            <option value="PayPal"> </option>
+            <option value="PaySafeCard"> </option>
+            <option value="Bitcoin"> </option>
+            <option value="Kreditkarte"> </option>
+        </datalist>
+
+    </fieldset>
+
+    <aside id="zusammenfassung">
+        <h4>Ihre Bestellung beinhaltet:</h4>
+
+        <p><span id="eis1"></span></p>
+        <p><span id="eis2"></span></p>
+        <p><span id="eis3"></span></p>
+        <p><span id="Streusel"></span></p>
+        <p><span id="Schokosoße"></span></p>
+        <p><span id="Karamellsoße"></span></p>
+        <p><span id="Sahne"></span></p>
+        <p><span id="Smarties"></span></p>
+        <p><span id="Cookies"></span></p>
+
+        <hr>
+
+        <p>Summe: <span id="sumsum">0.00</span> €</p>
+        <button>Check</button>
+        <hr>
+
+    </aside>
+</body>
+
+</html>
