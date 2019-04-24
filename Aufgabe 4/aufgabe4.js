@@ -34,59 +34,54 @@ var Aufgabe4;
     function handleChange(_event) {
         console.log(_event);
         let target = _event.target;
-        console.log("Changed " + target.name + " to " + target.value);
         if (this.id == "toppings") {
-            console.log("Changed " + target.name + " to " + target.checked);
             if (target.checked == true) {
-                document.getElementById(target.id).innerHTML = target.name;
+                document.getElementById(target.name).innerHTML = target.name + " (+ 0,50 Euro)";
                 toppings += 0.5;
             }
             if (target.checked == false) {
-                document.getElementById(target.id).innerHTML = "";
+                document.getElementById(target.name).innerHTML = "";
                 toppings -= 0.5;
             }
         }
         else if (target.name == "amountSorte1") {
             kugeln1 = parseInt(target.value);
-            console.log("1", kugeln1);
         }
         else if (target.name == "amountSorte2") {
             kugeln2 = parseInt(target.value);
-            console.log("2", kugeln2);
         }
         else if (target.name == "amountSorte3") {
             kugeln3 = parseInt(target.value);
-            console.log("3", kugeln3);
         }
-        else if (target.name == "Eissorte1") {
+        else if (target.name == "eisauswahl1") {
             sorte1 = target.value;
-            console.log("Sorte 1", sorte1);
         }
-        else if (target.name == "Eissorte2") {
+        else if (target.name == "eisauswahl2") {
             sorte2 = target.value;
-            console.log("Sorte 2", sorte2);
         }
-        else if (target.name == "Eissorte3") {
+        else if (target.name == "eisauswahl3") {
             sorte3 = target.value;
-            console.log("Sorte 3", sorte3);
         }
         else if (target.name == "RadiogroupLog") {
             transport = target.value;
-            document.getElementById(target.name).innerHTML = transport;
-            if (target.value == "Standardlieferung") {
+            document.getElementById("Lieferung").innerHTML = transport;
+            if (target.id == "Standardlieferung") {
                 lieferKosten = 2.5;
             }
-            else if (target.value == "Express (+ 4,00 Euro)") {
+            else if (target.id == "Fahrrad-Express") {
                 lieferKosten = 5;
             }
             else {
                 lieferKosten = 10;
             }
-            document.getElementById(target.name).innerHTML = target.value;
         }
-        else if (target.id == "gefaess") {
-            gefaess = target.value;
-            document.getElementById(target.name).innerHTML = gefaess;
+        else if (target.name == "Radiogroup") {
+            if (target.value == "Becher" || target.value == "Waffel") {
+                document.getElementById("behaeltnis").innerHTML = target.value;
+            }
+            else {
+                console.log("Da ist etwas mit dem Gefäß schief gegangen!");
+            }
         }
         else if (target.id == "name") {
             name = target.value;
@@ -101,11 +96,11 @@ var Aufgabe4;
             document.getElementById(target.name).innerHTML = ort;
         }
         else {
-            document.getElementById(target.name).innerHTML = target.value;
+            console.log("Hier ist etwas Schief gegangen!");
+            //document.getElementById(target.name).innerHTML = target.value;
         }
-        sum = 1.2 * (kugeln1 + kugeln2 + kugeln3) + lieferKosten + toppings;
+        let sum = 1.2 * (kugeln1 + kugeln2 + kugeln3) + lieferKosten + toppings;
         gesamt = sum.toFixed(2);
-        console.log(gesamt);
         document.getElementById("sumsum").innerHTML = "" + gesamt;
         if (kugeln1 == 0) {
             document.getElementById("eis1").innerHTML = "";

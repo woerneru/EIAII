@@ -36,7 +36,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
         <p>1,20 Euro pro Kugel</p>
 
         <p><input type="number" name="amountSorte1" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eis1" id="eis1">
+            <select name="eisauswahl1" id="eisauswahl1">
                 <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
                 <option value="Schokolade">Schokolade</option>
                 <option value="Vanille">Vanille</option>
@@ -50,7 +50,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
         </p>
 
         <p><input type="number" name="amountSorte2" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eis2" id="eis2">
+            <select name="eisauswahl2" id="eisauswahl2">
                 <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
                 <option value="Schokolade">Schokolade</option>
                 <option value="Vanille">Vanille</option>
@@ -64,7 +64,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
         </p>
 
         <p><input type="number" name="amountSorte3" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eis3" id="eis3">
+            <select name="eisauswahl3" id="eisauswahl3">
                 <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
                 <option value="Schokolade">Schokolade</option>
                 <option value="Vanille">Vanille</option>
@@ -80,17 +80,17 @@ Er wurde nicht kopiert und auch nicht diktiert.
     </fieldset>
     <fieldset id="toppings">
         <legend> Toppings </legend>
-        <input type="checkbox" name="streusel" value="check1" id="Streusel" />
+        <input type="checkbox" name="streusel" value="check1"  />
         <label for="check1">Streusel (+50ct)</label>
-        <input type="checkbox" name="schokosoße" value="check2" id="Schokosoße" />
+        <input type="checkbox" name="schokosoße" value="check2" />
         <label for="check2">Schokosoße (+50ct)</label>
-        <input type="checkbox" name="karamellsoße" value="check3" id="Karamellsoße" />
+        <input type="checkbox" name="karamellsoße" value="check3"  />
         <label for="check3">Karamellsoße (+50ct)</label>
-        <input type="checkbox" name="sahne" value="check4" id="Sahne" />
+        <input type="checkbox" name="sahne" value="check4" />
         <label for="check1">Sahne (+50ct)</label>
-        <input type="checkbox" name="smarties" value="check5" id="Smarties" />
+        <input type="checkbox" name="smarties" value="check5" />
         <label for="check2">Smarties (+50ct)</label>
-        <input type="checkbox" name="cookies" value="check6" id="Cookies" />
+        <input type="checkbox" name="cookies" value="check6" />
         <label for="check3">Cookies (+50ct)</label>
     </fieldset>
     <fieldset id="text">
@@ -112,11 +112,11 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
             <legend>Lieferung</legend>
 
-            <input type="radio" name="RadiogroupLog" value="Standardlieferung" id="Standardlieferung" />
+            <input type="radio" name="RadiogroupLog" value="Standardlieferung (+2,50 Euro)" id="Standardlieferung" />
             <label for="Standardlieferung">DHL Standardlieferung (+2.5€)</label>
             <input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express" />
             <label for="Express">Express (+4€)</label>
-            <input type="radio" name="RadiogroupLog" value="Taxi-Express (+ 9,81 Euro)" id="Taxi-Express" />
+            <input type="radio" name="RadiogroupLog" value="Drohnen-Express (+ 10 Euro)" id="Drohnen-Express" />
             <label for="Drohnen-Express">Drohnen-Express (+10€)</label>
 
         </fieldset>
@@ -134,15 +134,17 @@ Er wurde nicht kopiert und auch nicht diktiert.
     <aside id="zusammenfassung">
         <h4>Ihre Bestellung beinhaltet:</h4>
 
+        <p><span id="behaeltnis"></span></p>
         <p><span id="eis1"></span></p>
         <p><span id="eis2"></span></p>
         <p><span id="eis3"></span></p>
-        <p><span id="Streusel"></span></p>
-        <p><span id="Schokosoße"></span></p>
-        <p><span id="Karamellsoße"></span></p>
-        <p><span id="Sahne"></span></p>
-        <p><span id="Smarties"></span></p>
-        <p><span id="Cookies"></span></p>
+        <p><span id="streusel"></span></p>
+        <p><span id="schokosoße"></span></p>
+        <p><span id="karamellsoße"></span></p>
+        <p><span id="sahne"></span></p>
+        <p><span id="smarties"></span></p>
+        <p><span id="cookies"></span></p>
+        <p><span id="Lieferung"></span></p>
 
         <hr>
 
