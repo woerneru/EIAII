@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Aufgabe: Aufgabe 4: Eisdealer
+Aufgabe: Aufgabe 5: Eisdealer ReLoaded
 Name: Julian Wörner
 Matrikel: 260943
 Datum: 18.04.2019
@@ -8,12 +8,13 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
  -->
 
- <!--Leider reichte mir aufgrund der familiären verpflichtungen über die osterfeiertage die zeit nicht den code voll funktionstüchtig fertig zu bekommen, dies wird selbstverständlich nachgereicht!-->
 <html>
 
 <head>
     <meta charset="utf-8">
-    <script src="js/aufgabe4.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/aufgabe5.js"></script>
+    <script src="js/aufgabe5arryas.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/aufgabe4.css">
     <title>Eisdealer</title>
 </head>
@@ -22,7 +23,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
     <header>
         <img src="eismitscheiß.png" alt="Logo">
     </header>
-    <fieldset id="gefaess">
+    <!--<fieldset id="gefaess">
         <legend> Gefäß </legend>
         <input type="radio" name="Radiogroup" value="Becher" id="Becher" />
         <label for="radio1">Becher</label>
@@ -99,7 +100,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
         <input type="text" name="Text" placeholder="type here" id="name" required />
         <hr />
         Addresse
-        <input type="text" name="Text" placeholder="type here" id="adresse" required />
+        <input type="text" name="Text" placeholder="type here" id="addresse" required />
         <hr />
         Ort
         <input type="text" name="Text" placeholder="type here" id="ort" required />
@@ -129,7 +130,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
             <option value="Kreditkarte"> </option>
         </datalist>
 
-    </fieldset>
+    </fieldset>-->
 
     <aside id="zusammenfassung">
         <h4>Ihre Bestellung beinhaltet:</h4>
@@ -149,7 +150,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
         <hr>
 
         <p>Summe: <span id="sumsum">0.00</span> €</p>
-        <button>Check</button>
+        <button id="button">Check</button>
         <hr>
 
     </aside>

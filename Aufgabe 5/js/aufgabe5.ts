@@ -6,8 +6,9 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. */
 
 
-namespace Aufgabe4{
+namespace Aufgabe5 {
     window.addEventListener("load", init);
+    document.addEventListener("DOMContentLoaded", writeHTML);
     let sum: number = 0;
     let gesamt: string = "0";
     let kugeln1: number = 0;
@@ -18,11 +19,67 @@ namespace Aufgabe4{
     let sorte3: string;
     let name: string = undefined;
     let toppings: number = 0;
-    let gefaess: string = undefined;
+    let gefaess: string = "";
     let transport: string = undefined;
     let lieferKosten: number = 0;
     let addresse: string = undefined;
     let ort: string = undefined;
+
+    
+
+    function writeHTML(): void {
+        let node: HTMLElement = document.getElementById("fieldset");
+        document.getElementById("button").addEventListener("click", check);
+        let childNodeHTML: string = "";
+
+
+        childNodeHTML += "<h3>Dein Behälter?</h3>";
+        for (let i: number = 0; i < eisgefaess.length; i++) {
+            childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + eisgefaess[i].name + " " + eisgefaess[i].price + " Euro'  id='radio" + i + "' />";
+            childNodeHTML += "<label for='check" + i + "'>" + eisgefaess[i].name;
+        }
+        childNodeHTML += "<hr>";
+
+        childNodeHTML += "<h4>Sorte 1:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte1'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte1[i].name + " " + eissorte1[i].price + " Euro'>" + eissorte1[i].name + " " + eissorte1[i].price + " Euro </option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+
+        childNodeHTML += "<h4>Sorte 2:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte1'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].price + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].price + " Euro </option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+
+        childNodeHTML += "<h4>Sorte 3:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte1'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte3[i].name + " " + eissorte3[i].price + " Euro'>" + eissorte3[i].name + " " + eissorte3[i].price + " Euro </option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+
+        childNodeHTML += "<h4>Sorte 4:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte4'>";
+        for (let i: number = 0; i < eissorte1.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte4[i].name + " " + eissorte4[i].price + " Euro'>" + eissorte4[i].name + " " + eissorte4[i].price + " Euro </option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+
+        childNodeHTML += "<h4>Toppings</h4>";
+        childNodeHTML += "<select name='Select' id='toppings'>";
+        for (let i: number = 0; i < extras.length; i++) {
+            childNodeHTML += "<option value='" + i + extras[i].name + " " + extras[i].price + " Euro'>" + extras[i].name + " " + extras[i].price + " Euro </option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
+    }
 
     function init(_event: Event): void {
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
@@ -48,8 +105,8 @@ namespace Aufgabe4{
                 toppings += 0.5;
             }
 
-            if (target.checked == false){
-                document.getElementById(target.name).innerHTML = "";
+            if (target.checked == false) {
+                document.getElementById (target.name).innerHTML = "";
                 toppings -= 0.5;
             }
 
@@ -83,7 +140,7 @@ namespace Aufgabe4{
             transport = target.value;
             document.getElementById("Lieferung").innerHTML = transport;
 
-            if (target.id == "Standardlieferung"){
+            if (target.id == "Standardlieferung") {
                 lieferKosten = 2.5;
             }
 
@@ -109,7 +166,7 @@ namespace Aufgabe4{
             document.getElementById(target.name).innerHTML = name;
         }
 
-        else if (target.id == "adresse") {
+        else if (target.id == "addresse") {
             addresse = target.value;
             document.getElementById(target.name).innerHTML = addresse;
         }
@@ -202,7 +259,7 @@ namespace Aufgabe4{
         }
         
         else {
-            alert("Vielen Dank für ihre Bestellung!")
+            alert ("Vielen Dank für ihre Bestellung!");
         }
     }
 
