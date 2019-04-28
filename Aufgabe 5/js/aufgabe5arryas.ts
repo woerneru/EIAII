@@ -1,15 +1,19 @@
 namespace Aufgabe5 {
-// tslint:disable-next-line: class-name
-    export interface product {
-        name: string;
-        price: number;
+
+    export interface products {
+        name: string,
+        preis: number,
     }
 
-    export let eisgefaess: product[] = [{ name: "", price: 0}, { name: "Becher", price: 0 }, { name: "Waffel", price: 0 }];
-    export let eissorte1: product[] = [{ name: "", price: 0 }, { name: "Schokolade", price: 1.2 }, { name: "Vanille", price: 1.2}, { name: "Erdbeere", price: 1.2}, { name: "Himbeere", price: 1.2}, { name: "Zitrone", price: 1.2}, { name: "Cookie", price: 1.2}, { name: "Pipikaka", price: 1.2}];
-    export let eissorte2: product[] = [{ name: "", price: 0 }, { name: "Schokolade", price: 1.2 }, { name: "Vanille", price: 1.2}, { name: "Erdbeere", price: 1.2}, { name: "Himbeere", price: 1.2}, { name: "Zitrone", price: 1.2}, { name: "Cookie", price: 1.2}, { name: "Pipikaka", price: 1.2}];
-    export let eissorte3: product[] = [{ name: "", price: 0 }, { name: "Schokolade", price: 1.2 }, { name: "Vanille", price: 1.2}, { name: "Erdbeere", price: 1.2}, { name: "Himbeere", price: 1.2}, { name: "Zitrone", price: 1.2}, { name: "Cookie", price: 1.2}, { name: "Pipikaka", price: 1.2}];
-    export let eissorte4: product[] = [{ name: "", price: 0 }, { name: "Schokolade", price: 1.2 }, { name: "Vanille", price: 1.2}, { name: "Erdbeere", price: 1.2}, { name: "Himbeere", price: 1.2}, { name: "Zitrone", price: 1.2}, { name: "Cookie", price: 1.2}, { name: "Pipikaka", price: 1.2}];
-    export let extras: product[] = [{ name: "", price: 0}, { name: "Streusel", price: 0.5 }, { name: "schokosoße", price: 0.5 }, { name: "karamellsoße", price: 0.5}, { name: "sahne", price: 0.5}, { name: "smarties", price: 0.5}, { name: "cookies", price: 0.5}];
-    export let lieferung: product[] = [{ name: "Standardlieferung", price: 2.5}, { name: "Fahrrad-Express", price: 4 }, { name: "Drohnen-Express", price: 10 }];
+    export let gefaess: products[] = [{ name: "Becher", preis: 2 }, { name: "Waffel", preis: 2 }];
+    export let eissorte1: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let eissorte2: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let eissorte3: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let eissorte4: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let eissorte5: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let eissorte6: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Radiesschen", preis: 1.2 }, { name: "Camembert", preis: 1.2 }, { name: "Döner", preis: 1.2 }, { name: "veganer Kuhdung", preis: 1.2 }, { name: "Kümmel", preis: 1.2 }, { name: "Knoblauch", preis: 1.2 }];
+    export let lieferung: products[] = [{ name: "keine ausgewählt", preis: 0 }, { name: "Standardlieferung", preis: 2.5 }, { name: "Fahrrad-Express", preis: 5 }, { name: "Drohnen-Express", preis: 10 }];
 }
+
+
+

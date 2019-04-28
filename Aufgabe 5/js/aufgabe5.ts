@@ -1,267 +1,258 @@
-/* Aufgabe: Aufgabe 4: Eisdealer
-Name: Julian Wörner
-Matrikel: 260943
-Datum: 18.4.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
-Er wurde nicht kopiert und auch nicht diktiert. */
-
-
 namespace Aufgabe5 {
-    window.addEventListener("load", init);
     document.addEventListener("DOMContentLoaded", writeHTML);
-    let sum: number = 0;
-    let gesamt: string = "0";
-    let kugeln1: number = 0;
-    let kugeln2: number = 0;
-    let kugeln3: number = 0;
-    let sorte1: string;
-    let sorte2: string;
-    let sorte3: string;
-    let name: string = undefined;
-    let toppings: number = 0;
-    let gefaess: string = "";
-    let transport: string = undefined;
-    let lieferKosten: number = 0;
-    let addresse: string = undefined;
-    let ort: string = undefined;
+    document.addEventListener("DOMContentLoaded", changeListener);
 
-    
+    function changeListener(_event: Event): void {
+        let fieldset: HTMLElement = document.getElementById("fieldset");
+        fieldset.addEventListener("change", handleChange);
+    }
+
+    let behaelter: number = 0;
+    let sorte1: number = 0;
+    let sorte2: number = 0;
+    let sorte3: number = 0;
+    let sorte4: number = 0;
+    let sorte5: number = 0;
+    let sorte6: number = 0;
+    let preisVersand: number = 0;
+    let adresse: string = "";
+
 
     function writeHTML(): void {
         let node: HTMLElement = document.getElementById("fieldset");
-        document.getElementById("button").addEventListener("click", check);
+        document.getElementById("button").addEventListener("click", checkCheckout);
         let childNodeHTML: string = "";
 
-
-        childNodeHTML += "<h3>Dein Behälter?</h3>";
-        for (let i: number = 0; i < eisgefaess.length; i++) {
-            childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + eisgefaess[i].name + " " + eisgefaess[i].price + " Euro'  id='radio" + i + "' />";
-            childNodeHTML += "<label for='check" + i + "'>" + eisgefaess[i].name;
+        childNodeHTML += "<h3>Waffel oder Becher?</h3>";
+        for (let i: number = 0; i < gefaess.length; i++) {
+            childNodeHTML += "<input type='radio' name='Radiogroup' value='" + i + gefaess[i].name + " " + gefaess[i].preis + " Euro'  id='radio" + i + "' />";
+            childNodeHTML += "<label for='check" + i + "'>" + gefaess[i].name;
         }
         childNodeHTML += "<hr>";
 
         childNodeHTML += "<h4>Sorte 1:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte1'>";
         for (let i: number = 0; i < eissorte1.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte1[i].name + " " + eissorte1[i].price + " Euro'>" + eissorte1[i].name + " " + eissorte1[i].price + " Euro </option>";
+            childNodeHTML += "<option value='" + i + eissorte1[i].name + " " + eissorte1[i].preis + " Euro'>" + eissorte1[i].name + " " + eissorte1[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
 
         childNodeHTML += "<h4>Sorte 2:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte1'>";
-        for (let i: number = 0; i < eissorte1.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].price + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].price + " Euro </option>";
+        childNodeHTML += "<select name='Select' id='Sorte2'>";
+        for (let i: number = 0; i < eissorte2.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte2[i].name + " " + eissorte2[i].preis + " Euro'>" + eissorte2[i].name + " " + eissorte2[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
 
         childNodeHTML += "<h4>Sorte 3:</h4>";
-        childNodeHTML += "<select name='Select' id='Sorte1'>";
-        for (let i: number = 0; i < eissorte1.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte3[i].name + " " + eissorte3[i].price + " Euro'>" + eissorte3[i].name + " " + eissorte3[i].price + " Euro </option>";
+        childNodeHTML += "<select name='Select' id='Sorte3'>";
+        for (let i: number = 0; i < eissorte3.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte3[i].name + " " + eissorte3[i].preis + " Euro'>" + eissorte3[i].name + " " + eissorte3[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
 
         childNodeHTML += "<h4>Sorte 4:</h4>";
         childNodeHTML += "<select name='Select' id='Sorte4'>";
-        for (let i: number = 0; i < eissorte1.length; i++) {
-            childNodeHTML += "<option value='" + i + eissorte4[i].name + " " + eissorte4[i].price + " Euro'>" + eissorte4[i].name + " " + eissorte4[i].price + " Euro </option>";
+        for (let i: number = 0; i < eissorte4.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte4[i].name + " " + eissorte4[i].preis + " Euro'>" + eissorte4[i].name + " " + eissorte4[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
 
-        childNodeHTML += "<h4>Toppings</h4>";
-        childNodeHTML += "<select name='Select' id='toppings'>";
-        for (let i: number = 0; i < extras.length; i++) {
-            childNodeHTML += "<option value='" + i + extras[i].name + " " + extras[i].price + " Euro'>" + extras[i].name + " " + extras[i].price + " Euro </option>";
+        childNodeHTML += "<h4>Sorte 5:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte5'>";
+        for (let i: number = 0; i < eissorte5.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte5[i].name + " " + eissorte5[i].preis + " Euro'>" + eissorte5[i].name + " " + eissorte5[i].preis + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<hr>";
-    }
 
-    function init(_event: Event): void {
-        let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
-
-        for (let i: number = 0; i < fieldsets.length; i++) {
-            let fieldset: HTMLElement = fieldsets[i];
-            fieldset.addEventListener("change", handleChange);
+        childNodeHTML += "<h4>Sorte 6:</h4>";
+        childNodeHTML += "<select name='Select' id='Sorte6'>";
+        for (let i: number = 0; i < eissorte6.length; i++) {
+            childNodeHTML += "<option value='" + i + eissorte6[i].name + " " + eissorte6[i].preis + " Euro'>" + eissorte6[i].name + " " + eissorte6[i].preis + " Euro</option>";
         }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<hr>";
 
-        let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        button.addEventListener("click", check);
+        childNodeHTML += "<h3>Lieferoptionen</h3>";
+        childNodeHTML += "<select name='Select' id='ship'>";
+        for (let i: number = 0; i < lieferung.length; i++) {
+            childNodeHTML += "<option value='" + i + lieferung[i].name + " " + lieferung[i].preis + " Euro'>" + lieferung[i].name + " " + lieferung[i].preis + " Euro</option>";
+        }
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+
+        childNodeHTML += "<h3>Adresse</h3>";
+        childNodeHTML += "<input id='ad' type='text' name='Text' placeholder='Adresse hier eingeben' required/>";
+        node.innerHTML += childNodeHTML;
     }
 
-    function handleChange(_event: Event): void {
-        console.log(_event);
-
+    function handleChange (_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
 
-        if (this.id == "toppings") {
+        if (target.name == "Radiogroup") {
+            let node: HTMLElement = document.getElementById("Form");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            behaelter = gefaess[priceIndex].preis;
+            console.log(behaelter);
+            let childNodeHTML: string;
 
-            if (target.checked == true) {
-                document.getElementById(target.name).innerHTML = target.name + " (+ 0,50 Euro)";
-                toppings += 0.5;
-            }
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
 
-            if (target.checked == false) {
-                document.getElementById (target.name).innerHTML = "";
-                toppings -= 0.5;
-            }
-
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "amountSorte1") {
-            kugeln1 = parseInt(target.value);
+        if (target.id == "Sorte1") {
+            let node: HTMLElement = document.getElementById("Radiesschen");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte1 = eissorte1[priceIndex].preis;
+            console.log(sorte1);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "amountSorte2") {
-            kugeln2 = parseInt(target.value);
+        if (target.id == "Sorte2") {
+            let node: HTMLElement = document.getElementById("Camembert");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte2 = eissorte2[priceIndex].preis;
+            console.log(sorte2);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "amountSorte3") {
-            kugeln3 = parseInt(target.value);
+        if (target.id == "Sorte3") {
+            let node: HTMLElement = document.getElementById("Döner");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte3 = eissorte3[priceIndex].preis;
+            console.log(sorte3);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "eisauswahl1") {
-            sorte1 = target.value;
+        if (target.id == "Sorte4") {
+            let node: HTMLElement = document.getElementById("veganerKuhdung");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte4 = eissorte4[priceIndex].preis;
+            console.log(sorte4);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "eisauswahl2") {
-            sorte2 = target.value;
+        if (target.id == "Sorte5") {
+            let node: HTMLElement = document.getElementById("Kümmel");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte4 = eissorte4[priceIndex].preis;
+            console.log(sorte4);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "eisauswahl3") {
-            sorte3 = target.value;
+        if (target.id == "Sorte6") {
+            let node: HTMLElement = document.getElementById("Knoblauch");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            sorte4 = eissorte4[priceIndex].preis;
+            console.log(sorte4);
+            let childNodeHTML: string;
+
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "RadiogroupLog") {
-            transport = target.value;
-            document.getElementById("Lieferung").innerHTML = transport;
+        if (target.id == "ship") {
+            let node: HTMLElement = document.getElementById("Lieferung");
+            let value: string = target.value;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            preisVersand = lieferung[priceIndex].preis;
+            console.log(lieferung);
+            let childNodeHTML: string;
 
-            if (target.id == "Standardlieferung") {
-                lieferKosten = 2.5;
-            }
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
 
-            else if (target.id == "Fahrrad-Express") {
-                lieferKosten = 5;
-            }
-
-            else {
-                lieferKosten = 10;
-            }
+            node.innerHTML = childNodeHTML;
         }
 
-        else if (target.name == "Radiogroup") {
-            if (target.value == "Becher" || target.value == "Waffel") {
-                document.getElementById("behaeltnis").innerHTML = target.value;
-            } else {
-                console.log("Da ist etwas mit dem Gefäß schief gegangen!");
-            }
-        }
+        if (target.id == "ad") {
+            let node: HTMLElement = document.getElementById("Addresse");
+            adresse = target.value;
+            let childNodeHTML: string;
 
-        else if (target.id == "name") {
-            name = target.value;
-            document.getElementById(target.name).innerHTML = name;
-        }
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + target.value;
+            childNodeHTML += "</a>";
 
-        else if (target.id == "addresse") {
-            addresse = target.value;
-            document.getElementById(target.name).innerHTML = addresse;
+            node.innerHTML = childNodeHTML;
         }
+        let node: HTMLElement = document.getElementById("Zusammenfassung");
+        let childNodeHTML: string;
 
-        else if (target.id == "ort") {
-            ort = target.value;
-            document.getElementById(target.name).innerHTML = ort;
+        childNodeHTML = "";
+        childNodeHTML += "<a>";
+        childNodeHTML += (preisVersand + behaelter + sorte1 + sorte2 + sorte3 + sorte4 + sorte5 + sorte6);
+        childNodeHTML += " Euro";
+        childNodeHTML += "</a>";
+
+        node.innerHTML = childNodeHTML;
+    }
+
+    function checkCheckout(_event: Event): void {
+        if (adresse == "" || behaelter == 0 || sorte1 + sorte2 + sorte3 + sorte4 + sorte5 + sorte6 == 0 || preisVersand == 0) {
+            document.getElementById("missing").innerHTML = "Bitte füllen sie alle benötigten Felder syntaktisch korrekt aus!";
         }
 
         else {
-            console.log("Hier ist etwas Schief gegangen!");
-            //document.getElementById(target.name).innerHTML = target.value;
-        }
-
-        let sum: number = 1.2 * (kugeln1 + kugeln2 + kugeln3) + lieferKosten + toppings;
-        gesamt = sum.toFixed(2);
-
-        document.getElementById("sumsum").innerHTML = "" + gesamt;
-
-        if (kugeln1 == 0) {
-            document.getElementById("eis1").innerHTML = "";
-        }
-
-        else if (kugeln1 == 1) {
-            document.getElementById("eis1").innerHTML = kugeln1 + " Kugel " + sorte1;
-        }
-
-        else if (kugeln1 > 1) {
-            document.getElementById("eis1").innerHTML = kugeln1 + " Kugeln " + sorte1;
-        }
-
-        if (kugeln2 == 0) {
-            document.getElementById("eis2").innerHTML = "";
-        }
-
-        else if (kugeln2 == 1) {
-            document.getElementById("eis2").innerHTML = kugeln2 + " Kugel " + sorte2;
-        }
-
-        else if (kugeln2 > 1) {
-            document.getElementById("eis2").innerHTML = kugeln2 + " Kugeln " + sorte2;
-        }
-
-        if (kugeln3 == 0) {
-            document.getElementById("eis3").innerHTML = "";
-        }
-
-        else if (kugeln3 == 1) {
-            document.getElementById("eis3").innerHTML = kugeln3 + " Kugel " + sorte3;
-        }
-
-        else if (kugeln3 > 1) {
-            document.getElementById("eis3").innerHTML = kugeln3 + " Kugeln " + sorte3;
-        }
-
-        
-    }
-
-    function check (): void {
-        if (kugeln1 + kugeln2 + kugeln3 < 1) {
-            alert("Bitte mindestens eine Kugel bestellen.");           
-        }
-
-        else if (kugeln1 > 0 && (sorte1 == "[Wählen Sie hier Ihre Eissorte!]" || sorte1 == undefined)) {
-            alert("Eissorte auswählen.");
-        }
-
-        else if (kugeln2 > 0 && (sorte2 == "[Wählen Sie hier Ihre Eissorte!]" || sorte2 == undefined)) {
-            alert("Eissorte auswählen.");
-        }
-
-        else if (kugeln3 > 0 && (sorte3 == "[Wählen Sie hier Ihre Eissorte!]" || sorte3 == undefined)) {
-            alert("Eissorte auswählen.");
-        }
-
-        else if (transport == undefined) {
-            alert("Welche Lieferart?");
-        }
-
-        else if (name == undefined) {
-            alert("Geben Sie Ihren Namen ein.");
-        }
-
-        else if (addresse == undefined) {
-            alert("Gib bitte die Addresse an");
-        }
-
-        else if (ort == undefined) {
-            alert("Bitte Wohnort eingeben");
-        }
-        
-        else {
-            alert ("Vielen Dank für ihre Bestellung!");
+            document.getElementById("missing").innerHTML = "";
         }
     }
-
 }
-

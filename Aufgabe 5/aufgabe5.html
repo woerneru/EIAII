@@ -1,159 +1,35 @@
 <!DOCTYPE html>
-<!--
-Aufgabe: Aufgabe 5: Eisdealer ReLoaded
-Name: Julian Wörner
-Matrikel: 260943
-Datum: 18.04.2019
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
-Er wurde nicht kopiert und auch nicht diktiert.
- -->
-
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/aufgabe5.js"></script>
-    <script src="js/aufgabe5arryas.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/aufgabe4.css">
-    <title>Eisdealer</title>
+    <script src="js/aufgabe5.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/aufgabe5arryas.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="styles/aufgabe5.css">
+    <title>Eisdealer Reloaded</title>
 </head>
-
 <body>
-    <header>
+    <main>
+        <h1>Eis mit Scheiß</h1>
         <img src="eismitscheiß.png" alt="Logo">
-    </header>
-    <!--<fieldset id="gefaess">
-        <legend> Gefäß </legend>
-        <input type="radio" name="Radiogroup" value="Becher" id="Becher" />
-        <label for="radio1">Becher</label>
-        <input type="radio" name="Radiogroup" value="Waffel" id="Waffel" />
-        <label for="radio2">Waffel</label>
-    </fieldset>
-
-    <fieldset>
-        <legend>Eissorten</legend>
-
-        <p>1,20 Euro pro Kugel</p>
-
-        <p><input type="number" name="amountSorte1" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eisauswahl1" id="eisauswahl1">
-                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
-                <option value="Schokolade">Schokolade</option>
-                <option value="Vanille">Vanille</option>
-                <option value="Erdbeere">Erdbeere</option>
-                <option value="Himbeere">Himbeere</option>
-                <option value="Zitrone">Zitrone</option>
-                <option value="Cookie">Cookie</option>
-                <option value="Pipikaka">Pipikaka</option>
-
-            </select>
-        </p>
-
-        <p><input type="number" name="amountSorte2" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eisauswahl2" id="eisauswahl2">
-                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
-                <option value="Schokolade">Schokolade</option>
-                <option value="Vanille">Vanille</option>
-                <option value="Erdbeere">Erdbeere</option>
-                <option value="Himbeere">Himbeere</option>
-                <option value="Zitrone">Zitrone</option>
-                <option value="Cookie">Cookie</option>
-                <option value="Pipikaka">Pipikaka</option>
-
-            </select>
-        </p>
-
-        <p><input type="number" name="amountSorte3" step="1" min="0" max="4" value="0" /> Kugeln
-            <select name="eisauswahl3" id="eisauswahl3">
-                <option value="[Wählen Sie hier Ihre Eissorte!]" selected>Eissorte hier wählen</option>
-                <option value="Schokolade">Schokolade</option>
-                <option value="Vanille">Vanille</option>
-                <option value="Erdbeere">Erdbeere</option>
-                <option value="Himbeere">Himbeere</option>
-                <option value="Zitrone">Zitrone</option>
-                <option value="Cookie">Cookie</option>
-                <option value="Pipikaka">Pipikaka</option>
-                </datalist>
-            </select>
-        </p>
-
-    </fieldset>
-    <fieldset id="toppings">
-        <legend> Toppings </legend>
-        <input type="checkbox" name="streusel" value="check1"  />
-        <label for="check1">Streusel (+50ct)</label>
-        <input type="checkbox" name="schokosoße" value="check2" />
-        <label for="check2">Schokosoße (+50ct)</label>
-        <input type="checkbox" name="karamellsoße" value="check3"  />
-        <label for="check3">Karamellsoße (+50ct)</label>
-        <input type="checkbox" name="sahne" value="check4" />
-        <label for="check1">Sahne (+50ct)</label>
-        <input type="checkbox" name="smarties" value="check5" />
-        <label for="check2">Smarties (+50ct)</label>
-        <input type="checkbox" name="cookies" value="check6" />
-        <label for="check3">Cookies (+50ct)</label>
-    </fieldset>
-    <fieldset id="text">
-        <legend> Lieferformular </legend>
-        Name
-        <input type="text" name="Text" placeholder="type here" id="name" required />
-        <hr />
-        Addresse
-        <input type="text" name="Text" placeholder="type here" id="addresse" required />
-        <hr />
-        Ort
-        <input type="text" name="Text" placeholder="type here" id="ort" required />
-        <hr />
-        E-Mail
-        <input type="email" name="Mail" placeholder="place @ between" />
-
-
-        <fieldset>
-
-            <legend>Lieferung</legend>
-
-            <input type="radio" name="RadiogroupLog" value="Standardlieferung (+2,50 Euro)" id="Standardlieferung" />
-            <label for="Standardlieferung">DHL Standardlieferung (+2.5€)</label>
-            <input type="radio" name="RadiogroupLog" value="Fahrrad-Express (+ 4,00 Euro)" id="Fahrrad-Express" />
-            <label for="Express">Express (+4€)</label>
-            <input type="radio" name="RadiogroupLog" value="Drohnen-Express (+ 10 Euro)" id="Drohnen-Express" />
-            <label for="Drohnen-Express">Drohnen-Express (+10€)</label>
-
+        <fieldset id="fieldset">
         </fieldset>
-        Zahlungsmittel
-        <input type="text" name="Zahlungsmittel" list="Payment" placeholder="Zahlungsart" />
-        <datalist id="Payment">
-            <option value="PayPal"> </option>
-            <option value="PaySafeCard"> </option>
-            <option value="Bitcoin"> </option>
-            <option value="Kreditkarte"> </option>
-        </datalist>
-
-    </fieldset>-->
-
-    <aside id="zusammenfassung">
-        <h4>Ihre Bestellung beinhaltet:</h4>
-
-        <p><span id="behaeltnis"></span></p>
-        <p><span id="eis1"></span></p>
-        <p><span id="eis2"></span></p>
-        <p><span id="eis3"></span></p>
-        <p><span id="streusel"></span></p>
-        <p><span id="schokosoße"></span></p>
-        <p><span id="karamellsoße"></span></p>
-        <p><span id="sahne"></span></p>
-        <p><span id="smarties"></span></p>
-        <p><span id="cookies"></span></p>
-        <p><span id="Lieferung"></span></p>
-
-        <hr>
-
-        <p>Summe: <span id="sumsum">0.00</span> €</p>
-        <button id="button">Check</button>
-        <hr>
-
-    </aside>
+        <aside id="Zusammenfassung">
+            <h2>Bestellübersicht</h2>
+            <a>Form:</a> <a id="Form"></a> <br>
+            <a>Sorte 1:</a> <a id="Radiesschen"></a> <br>
+            <a>Sorte 2:</a> <a id="Camembert"></a> <br>
+            <a>Sorte 3:</a> <a id="Döner"></a> <br>
+            <a>Sorte 4:</a> <a id="veganerKuhdung"></a> <br>
+            <a>Sorte 5:</a> <a id="Kümmel"></a> <br>
+            <a>Sorte 6:</a> <a id="Knoblauch"></a> <br>
+            <a>Lieferoption:</a> <a id="Lieferung"></a> <br>
+            <a>Adresse:</a> <a id="Addresse"></a> <br>
+            <a>Gesamt:</a> <a id="Zusammenfassung"></a> <br>
+        </aside>
+        <button id="button">Bestellung prüfen</button>
+        <div id="missing"></div>
+    </main>
 </body>
-
 </html>
